@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerService.DataModel\ComputerService.DataModel.csproj" />
+  </ItemGroup>
+
 </Project>
