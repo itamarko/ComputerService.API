@@ -48,9 +48,9 @@ namespace ComputerService.Services
             return clientId;
         }
 
-        public bool ClientExists(string email)
+        public int? GetClientId(string email)
         {
-            bool clientExists = false;
+            int? id = null;
 
             try
             {
@@ -59,11 +59,11 @@ namespace ComputerService.Services
                 {
                     var param = new DynamicParameters();
                     param.Add("@email", email, dbType: DbType.String, direction: ParameterDirection.Input);
-                    param.Add("@daLiPostoji", dbType: DbType.Binary, direction: ParameterDirection.Output);
+                    param.Add("@id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                     sqlConn.Execute(query, param, commandType: CommandType.StoredProcedure);
 
-                    clientExists = param.Get<bool>("@daLiPostoji");
+                    id = param.Get<int>("@id");
                 }
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace ComputerService.Services
 
             }
 
-            return clientExists;
+            return id;
         }
     }
 }

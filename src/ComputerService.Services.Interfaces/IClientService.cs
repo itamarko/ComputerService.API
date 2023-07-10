@@ -6,6 +6,6 @@ namespace ComputerService.Services.Interfaces
     {
         int AddClient(AddClientRequest client);
 
-        bool ClientExists(string email);
+        int? GetClientId(string email);
     }
 }

@@ -1,3 +1,6 @@
+using ComputerService.Mapper;
+using ComputerService.DependencyInjection;
+
 namespace ComputerService.API
 {
     public class Program
@@ -7,6 +10,9 @@ namespace ComputerService.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddMyServiceDependencies();
+            builder.Services.AddAutoMapper(ops => ops.AddProfile<DataModel2BusinessModel>());
+            builder.Services.AddAutoMapper(ops => ops.AddProfile<BusinessModel2DataModel>());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

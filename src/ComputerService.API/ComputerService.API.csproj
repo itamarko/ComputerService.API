@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerService.DependencyInjection\ComputerService.DependencyInjection.csproj" />
+    <ProjectReference Include="..\ComputerService.Mapper\ComputerService.Mapper.csproj" />
+  </ItemGroup>
+
 </Project>

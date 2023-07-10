@@ -66,10 +66,7 @@ namespace ComputerService.Services
                     var param = new DynamicParameters();
                     param.Add("@Id", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
-                    device = sqlConn.Query<GetDeviceResponse>(query, param, commandType: CommandType.StoredProcedure);
-                    sqlConn.Execute(query, param, commandType: CommandType.StoredProcedure);
-
-                    device = param.Get<int>("@id");
+                    device = sqlConn.QuerySingle<GetDeviceResponse>(query, param, commandType: CommandType.StoredProcedure);
                 }
             }
             catch (Exception ex)

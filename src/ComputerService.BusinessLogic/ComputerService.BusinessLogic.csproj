@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerService.BusinessLogic.Interfaces\ComputerService.BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\ComputerService.Mapper\ComputerService.Mapper.csproj" />
+    <ProjectReference Include="..\ComputerService.Services.Interfaces\ComputerService.Services.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
